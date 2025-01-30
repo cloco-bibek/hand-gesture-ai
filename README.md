@@ -1,8 +1,7 @@
 # hand-gesture-recognition-using-mediapipe
-Estimate hand pose using MediaPipe (Python version).<br> This is a sample 
-program that recognizes hand signs and finger gestures with a simple MLP using the detected key points.
-<br> ❗ _️**This is English Translated version of the [original repo](https://github.com/Kazuhito00/hand-gesture-recognition-using-mediapipe). All Content is translated to english along with comments and notebooks**_ ❗
-<br> 
+This is fast-api app to recognize hand gesture using Google's MediaPipe. 
+This is a program that recognizes hand signs and finger gestures with a simple MLP using the detected key points.
+
 ![mqlrf-s6x16](https://user-images.githubusercontent.com/37477845/102222442-c452cd00-3f26-11eb-93ec-c387c98231be.gif)
 
 This repository contains the following contents.
@@ -22,7 +21,7 @@ This repository contains the following contents.
 # Demo
 Here's how to run the demo using your webcam.
 ```bash
-python app.py
+uvicorn main:app --reload --port 8001
 ```
 
 The following options can be specified when running the demo.
@@ -37,7 +36,7 @@ Tracking confidence threshold (Default：0.5)
 
 # Directory
 <pre>
-│  app.py
+│  main.py
 │  keypoint_classification.ipynb
 │  point_history_classification.ipynb
 │  
@@ -59,7 +58,7 @@ Tracking confidence threshold (Default：0.5)
 └─utils
     └─cvfpscalc.py
 </pre>
-### app.py
+### main.py
 This is a sample program for inference.<br>
 In addition, learning data (key points) for hand sign recognition,<br>
 You can also collect training data (index finger coordinate history) for finger gesture recognition.
@@ -140,11 +139,5 @@ The model using "LSTM" is as follows. <br>Please change "use_lstm = False" to "T
 # Reference
 * [MediaPipe](https://mediapipe.dev/)
 
-# Author
-Kazuhito Takahashi(https://twitter.com/KzhtTkhs)
-
-# Translation and other improvements
-Nikita Kiselov(https://github.com/kinivi)
- 
 # License 
 hand-gesture-recognition-using-mediapipe is under [Apache v2 license](LICENSE).
